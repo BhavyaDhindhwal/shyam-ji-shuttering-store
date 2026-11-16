@@ -1,0 +1,148 @@
+/* =====================================================================
+   SHYAM JI SHUTTERING STORE — GLOBAL BLUE & GOLD THEME
+   Ye file poore project ke liye base tokens + safety rules deti hai.
+   ===================================================================== */
+
+:root {
+  /* Blue scale */
+  --sj-navy-950: #020617;
+  --sj-navy-900: #04122f;
+  --sj-navy-800: #071d49;
+  --sj-blue: #0b3d91;
+  --sj-blue-light: #164fa8;
+  --sj-blue-tint: #eef1f7;
+  --sj-page: #f4f6fa;
+
+  /* Gold scale */
+  --sj-gold: #d4a437;
+  --sj-gold-bright: #f2c14e;
+  --sj-gold-light: #f2d98b;
+  --sj-gold-ink: #9a7116; /* readable gold text on white */
+  --sj-gold-tint: #fff6d6;
+
+  /* Neutrals */
+  --sj-border: #dce3ec;
+  --sj-muted: #667085;
+  --sj-text: #172033;
+
+  /* Effects */
+  --sj-shadow-sm: 0 6px 18px rgba(7, 29, 73, 0.07);
+  --sj-shadow-md: 0 18px 45px rgba(7, 29, 73, 0.12);
+  --sj-ring: 0 0 0 3px rgba(212, 164, 55, 0.35);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px; /* fixed navbar ke neeche anchor na chhupe */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: clip; /* horizontal scroll band, sticky/fixed ko nuksan nahi */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--sj-page);
+  color: var(--sj-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* Lambi values layout na tode */
+h1, h2, h3, h4, p, td, th, label, strong, span {
+  overflow-wrap: anywhere;
+}
+
+/* Tables kabhi page ko bahar nahi dhakelenge */
+table {
+  max-width: 100%;
+}
+
+/* Gold text selection */
+::selection {
+  background: var(--sj-gold-light);
+  color: var(--sj-navy-800);
+}
+
+/* Keyboard focus — gold ring */
+:focus-visible {
+  outline: 2px solid var(--sj-gold);
+  outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  accent-color: var(--sj-blue);
+}
+
+/* Blue-gold scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sj-gold) #e3e8f2;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e3e8f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sj-blue), var(--sj-gold));
+  border: 2px solid #e3e8f2;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print me exact colors */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

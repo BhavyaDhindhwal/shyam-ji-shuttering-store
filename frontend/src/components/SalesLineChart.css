@@ -1,0 +1,49 @@
+.sales-dashboard-panel {
+  margin-bottom: 24px;
+}
+
+.sales-total-box {
+  align-items: center;
+  background: #071d49;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 18px 20px;
+}
+
+.sales-total-box span {
+  color: #d8dfec;
+  font-size: 13px;
+}
+
+.sales-total-box strong {
+  color: #f2d98b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.sales-line-chart {
+  min-height: 320px;
+  width: 100%;
+}
+
+.sales-chart-empty {
+  align-items: center;
+  background: #fbfcff;
+  border: 1px dashed #d8dfec;
+  border-radius: 18px;
+  color: #728096;
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+}
+
+@media (max-width: 560px) {
+  .sales-total-box {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

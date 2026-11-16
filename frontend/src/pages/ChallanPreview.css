@@ -1,0 +1,613 @@
+.challan-page {
+  background: #f4f6fa;
+  color: #071d49;
+  min-height: 100vh;
+  padding: 30px 5%;
+}
+
+.challan-toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 24px;
+  max-width: 1000px;
+}
+
+.challan-back-link {
+  color: #0b3d91;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.challan-toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.challan-primary-button,
+.challan-secondary-button {
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 40px;
+  padding: 10px 16px;
+}
+
+.challan-primary-button {
+  background: #d4a437;
+  color: #071d49;
+}
+
+.challan-primary-button:hover {
+  background: #f2d98b;
+}
+
+.challan-secondary-button {
+  background: #ffffff;
+  border: 1px solid #dce3ec;
+  color: #0b3d91;
+}
+
+.challan-secondary-button:hover {
+  border-color: #d4a437;
+}
+
+.challan-paper {
+  background: #ffffff;
+  border-top: 4px solid #d4a437;
+  box-shadow: 0 12px 35px rgba(7, 29, 73, 0.1);
+  isolation: isolate;
+  margin: 0 auto;
+  max-width: 1000px;
+  overflow: hidden;
+  padding: 50px;
+  position: relative;
+}
+
+/* ===== WATERMARK (screen + print) ===== */
+.challan-paper::before {
+  content: "SHYAM JI";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) rotate(-28deg);
+  color: rgba(11, 61, 145, 0.055);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(80px, 16vw, 190px);
+  font-weight: 700;
+  letter-spacing: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  -webkit-text-stroke: 1px rgba(212, 164, 55, 0.18);
+}
+
+.challan-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.challan-brand-block {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.challan-logo {
+  align-items: center;
+  background: #0b3d91;
+  border: 3px solid #d4a437;
+  border-radius: 50%;
+  color: #f2d98b;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  height: 58px;
+  justify-content: center;
+  width: 58px;
+}
+
+.challan-brand-block h1 {
+  color: #0b3d91;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.challan-brand-block p {
+  color: #728096;
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+
+.challan-title-block {
+  text-align: right;
+}
+
+.challan-title-block p {
+  color: #d4a437;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.challan-title-block h2 {
+  color: #0b3d91;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.challan-divider {
+  background: #d4a437;
+  height: 2px;
+  margin: 28px 0;
+  width: 100%;
+}
+
+.challan-meta-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  margin-bottom: 35px;
+}
+
+.challan-meta-card {
+  background: #f8f9fc;
+  border: 1px solid #dce3ec;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 17px;
+}
+
+.challan-meta-card span,
+.challan-meta-card small {
+  color: #728096;
+  font-size: 11px;
+}
+
+.challan-meta-card strong {
+  color: #0b3d91;
+  font-size: 14px;
+}
+
+.challan-section {
+  margin-top: 30px;
+}
+
+.challan-section-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.challan-section-heading h3,
+.challan-notes-section h3 {
+  color: #0b3d91;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.challan-section-heading > span {
+  color: #728096;
+  font-size: 12px;
+}
+
+.challan-eyebrow {
+  color: #d4a437;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0 0 7px;
+  text-transform: uppercase;
+}
+
+.challan-table-wrapper {
+  overflow-x: auto;
+}
+
+.challan-table {
+  border-collapse: collapse;
+  min-width: 650px;
+  width: 100%;
+}
+
+.challan-table th,
+.challan-table td {
+  border-bottom: 1px solid #dce3ec;
+  padding: 14px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.challan-table th {
+  color: #728096;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.challan-table td {
+  color: #0b3d91;
+  font-size: 13px;
+}
+
+.challan-table td strong {
+  color: #d4a437;
+}
+
+.challan-cartage-section {
+  background: #fbfcff;
+  border: 1px solid #eadba8;
+  margin-top: 28px;
+  padding: 20px;
+}
+
+.challan-cartage-section .challan-section-heading > strong {
+  color: #d4a437;
+  font-size: 22px;
+}
+
+.challan-cartage-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.challan-cartage-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.challan-cartage-grid span {
+  color: #728096;
+  font-size: 11px;
+}
+
+.challan-cartage-grid strong {
+  color: #0b3d91;
+  font-size: 13px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.challan-cartage-address {
+  grid-column: 1 / -1;
+}
+
+.challan-summary-box {
+  background: #071d49;
+  color: #ffffff;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  justify-content: stretch;
+  margin-top: 28px;
+  padding: 20px;
+}
+
+.challan-summary-box div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: right;
+}
+
+.challan-summary-box span {
+  color: #d8dfec;
+  font-size: 11px;
+}
+
+.challan-summary-box strong {
+  color: #f2d98b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.challan-notes-section {
+  border-bottom: 1px solid #dce3ec;
+  margin-top: 35px;
+  padding-bottom: 25px;
+}
+
+.challan-notes-section p {
+  color: #728096;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+.challan-footer {
+  display: flex;
+  gap: 100px;
+  justify-content: flex-end;
+  margin-top: 80px;
+}
+
+.challan-footer div {
+  min-width: 170px;
+  text-align: center;
+}
+
+.challan-footer p {
+  color: #728096;
+  font-size: 11px;
+  margin: 0 0 32px;
+}
+
+.challan-footer span {
+  border-bottom: 1px solid #0b3d91;
+  display: block;
+}
+
+.challan-footer-note {
+  color: #728096;
+  font-size: 10px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.challan-state-card {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(7, 29, 73, 0.08);
+  margin: 100px auto;
+  max-width: 520px;
+  padding: 45px;
+  text-align: center;
+}
+
+.challan-state-card h1 {
+  color: #0b3d91;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+
+.challan-state-card p {
+  color: #728096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.challan-state-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+@media (max-width: 760px) {
+  .challan-page {
+    padding: 18px 4%;
+  }
+
+  .challan-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .challan-toolbar-actions {
+    width: 100%;
+  }
+
+  .challan-toolbar-actions button {
+    flex: 1;
+  }
+
+  .challan-paper {
+    padding: 25px;
+  }
+
+  .challan-header {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .challan-title-block {
+    text-align: left;
+  }
+
+  .challan-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .challan-summary-box {
+    justify-content: space-between;
+  }
+
+  .challan-footer {
+    gap: 35px;
+    justify-content: space-between;
+  }
+
+  .challan-footer div {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .challan-paper {
+    padding: 18px;
+  }
+
+  .challan-brand-block {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .challan-brand-block h1 {
+    font-size: 23px;
+  }
+
+  .challan-summary-box {
+    gap: 20px;
+  }
+
+  .challan-footer {
+    gap: 18px;
+  }
+
+  .challan-footer div {
+    min-width: 0;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .challan-summary-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .challan-cartage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .challan-summary-box {
+    grid-template-columns: 1fr;
+  }
+  .challan-cartage-grid {
+    grid-template-columns: 1fr;
+  }
+  .challan-cartage-address {
+    grid-column: auto;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .challan-page {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .challan-paper {
+    box-shadow: none;
+    max-width: none;
+    padding: 20px;
+  }
+}
+ 
+.challan-payment-section {
+  border: 1px solid #dce3ec;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.challan-payment-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.challan-payment-grid div {
+  background: #f8f9fc;
+  border: 1px solid #dce3ec;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px;
+}
+
+.challan-payment-grid span {
+  color: #728096;
+  font-size: 11px;
+}
+
+.challan-payment-grid strong {
+  color: #0b3d91;
+  font-size: 18px;
+}
+
+.challan-payment-empty,
+.challan-estimate-note {
+  color: #728096;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.challan-estimate-note {
+  border-top: 1px solid #dce3ec;
+  margin: 16px 0 0;
+  padding-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .challan-payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Store title centered; GST and owner-entered challan number stay in the corners. */
+.challan-header-centered { position: relative; display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: start; gap: 10px; }
+.challan-gst-placeholder { color: #64748b; font-size: 10px; text-align: left; }
+.challan-brand-centered { justify-content: center; text-align: center; }
+.challan-brand-centered h1 { white-space: nowrap; }
+.challan-header-centered .challan-title-block { text-align: right; }
+@media print { .challan-header-centered { grid-template-columns: 1fr 2fr 1fr; } }
+
+/* Business identity details printed below the store name */
+.challan-brand-block .challan-business-details {
+  color: #334155;
+  font-size: 9px;
+  line-height: 1.3;
+  margin: 2px 0 0;
+  letter-spacing: 0;
+}
+
+
+/* Authorized signature and compact A4 challan print */
+.challan-footer { align-items: flex-end; display:flex; justify-content:space-between; margin-top:24px; }
+.challan-authorized-signature { align-items:center; display:flex; flex-direction:column; justify-content:center; margin-left:auto; min-width:170px; text-align:center; }
+.challan-authorized-signature img { height:58px; object-fit:contain; width:135px; }
+.challan-authorized-signature p { border-top:1px solid #0b3d91; color:#0b3d91; font-size:10px; margin:2px 0 0; padding-top:4px; width:150px; }
+@media print {
+  @page { size:A4 portrait; margin:8mm; }
+  .challan-page { background:#fff !important; padding:0 !important; }
+  .challan-paper { box-sizing:border-box; border-top-width:2px; box-shadow:none !important; margin:0 !important; max-width:none !important; padding:6mm !important; width:100% !important; }
+  .challan-header-centered { grid-template-columns: .7fr 2fr .7fr; gap:6px; }
+  .challan-brand-block h1 { font-size:19px; }
+  .challan-brand-block p { font-size:9px; margin-top:3px; }
+  .challan-divider { margin:10px 0; }
+  .challan-meta-grid { gap:7px; margin-bottom:12px; }
+  .challan-meta-card { gap:4px; padding:8px; }
+  .challan-section { margin-top:12px; }
+  .challan-section-heading { margin-bottom:7px; }
+  .challan-section-heading h3 { font-size:17px; }
+  .challan-table { min-width:0 !important; }
+  .challan-table th,.challan-table td { font-size:9px; padding:6px 5px; }
+  .challan-cartage-section,.challan-payment-section { margin-top:10px; padding:8px; }
+  .challan-payment-grid { margin:8px 0; }
+  .challan-payment-grid div { padding:7px; }
+  .challan-notes-section { margin-top:10px; }
+  .challan-footer { margin-top:12px; }
+  .challan-authorized-signature img { height:48px; }
+  .challan-paper::before { display:none; }
+}
+
+/* Challan summary now contains only the two issue-document quantities. */
+.challan-summary-box { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
